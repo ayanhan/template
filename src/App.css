@@ -1,38 +1,115 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  color: #fff;
+  background: #0F0E14;
+  position: relative;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
+.App::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 25%,
+    rgba(255, 255, 255, 0) 50%
+  );
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+  padding: 20px;
+  margin: 40px auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-logo {
+  width: 200px;
+  height: 40px;
+  background-image: url('/public/header-logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.body {
+  flex-grow: 1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.text-logo {
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.coming-soon {
+  font-family: Montserrat, sans-serif;
+  font-size: 123.42px;
+  font-weight: 700;
+  line-height: 123.42px;
+  letter-spacing: -0.01em;
+  background: linear-gradient(to top right, #888, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.telegram-button, .discord-button {
+  cursor: pointer;
+  padding: 0;
+  width: 140px;
+  height: 44px;
+}
+
+.telegram-button {
+  background-image: url('/public/telegram.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.discord-button {
+  background-image: url('/public/discord.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+
+@media (max-width: 768px) {
+  .coming-soon {
+    font-size: 60px;
+    line-height: 65px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App::after {
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.01) 25%,
+      rgba(255, 255, 255, 0) 80%
+    );
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
   }
 }

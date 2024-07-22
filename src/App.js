@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const handleTelegramClick = () => {
+    window.open('https://t.me/cryptoindexcom', '_blank', 'noopener,noreferrer');
+  };
+
+  const handleDiscordClick = () => {
+    window.open('https://discord.gg/hWyHhPdgBP', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='header'>
+        <div className='header-logo'></div>
+      </div>
+      <div className='body'>
+        <div className='text-logo'>
+          <div className='coming-soon'>COMING SOON</div>
+        </div>
+      </div>
+      <div className='footer'>
+        <div className='telegram-button' onClick={handleTelegramClick}></div>
+        <div className='discord-button' onClick={handleDiscordClick}></div>
+      </div>
     </div>
   );
 }
